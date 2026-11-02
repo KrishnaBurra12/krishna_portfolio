@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krishna Burra – Flutter Lead</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1220;--surf:#111B2E;--surf2:#16233B;--ink:#E8EEF8;--mut:#93A3BD;--line:#223250;--acc:#4FC3F7;--acc2:#6C8CFF;--on:#06121F;--ok:#5EE0A0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F3F6FB;--surf:#FFFFFF;--surf2:#E9F0FA;--ink:#0F1C33;--mut:#53627C;--line:#D3DDEC;--acc:#0B63C9;--acc2:#3B54D9;--on:#FFFFFF;--ok:#0E8A57;color-scheme:light}}
+:root[data-theme="light"]{--bg:#F3F6FB;--surf:#FFFFFF;--surf2:#E9F0FA;--ink:#0F1C33;--mut:#53627C;--line:#D3DDEC;--acc:#0B63C9;--acc2:#3B54D9;--on:#FFFFFF;--ok:#0E8A57;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 Inter,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;margin:0;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+.w{max-width:1060px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;gap:20px;align-items:center;height:58px;overflow-x:auto}
+nav b{font:700 18px "Space Grotesk";margin-right:auto;white-space:nowrap}
+nav a{text-decoration:none;color:var(--mut);font-size:14.5px;font-weight:500;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.tg{background:none;border:1px solid var(--line);color:var(--mut);border-radius:999px;padding:4px 11px;font:500 12.5px Inter;cursor:pointer}
+.mono{font-family:"JetBrains Mono",monospace}
+.lbl{font:500 14px "JetBrains Mono",monospace;color:var(--acc);margin-bottom:10px}
+.hero{padding:84px 0 60px}
+.hero h1{font-size:clamp(46px,8vw,88px);font-weight:700}
+.hero .r{font:500 clamp(17px,2.4vw,22px) "JetBrains Mono",monospace;color:var(--acc);margin:16px 0 20px}
+.hero p{max-width:60ch;color:var(--mut);margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.b{padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--acc);display:inline-block}
+.b.p{background:var(--acc);color:var(--on)}
+.b.s{color:var(--acc)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:44px}
+.st{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.st strong{display:block;font:700 34px "Space Grotesk";color:var(--ink)}
+.st span{font-size:13.5px;color:var(--mut)}
+section{padding:68px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:18px}
+.lead{color:var(--mut);max-width:68ch;margin:0 0 30px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.c{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:22px}
+.c h3{font-size:19px;margin-bottom:8px}
+.c p{margin:0 0 10px;color:var(--mut);font-size:15.5px}
+.ic{width:34px;height:34px;border-radius:9px;background:var(--surf2);color:var(--acc);display:grid;place-items:center;font:700 15px "JetBrains Mono";margin-bottom:12px}
+.t{display:inline-block;font:500 12.5px "JetBrains Mono",monospace;color:var(--acc);background:var(--surf2);padding:3px 10px;border-radius:6px;margin:0 6px 6px 0}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.sk h3{font-size:16px;margin-bottom:10px;color:var(--mut);font-weight:500}
+.feat{border-color:var(--acc2)}
+.feat .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.feat h3{font-size:28px}
+.badge{font:500 12.5px "JetBrains Mono";color:var(--ok);border:1px solid var(--ok);border-radius:999px;padding:3px 12px}
+ul.f{margin:14px 0;padding:0;list-style:none;columns:2 260px;column-gap:28px;color:var(--mut);font-size:15px}
+ul.f li{padding-left:18px;position:relative;margin-bottom:6px;break-inside:avoid}
+ul.f li::before{content:"›";position:absolute;left:0;color:var(--acc);font-weight:700}
+.sim{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sim .bar{display:flex;gap:6px;flex-wrap:wrap;padding:10px;background:var(--surf2)}
+.sim button{font:500 13px "JetBrains Mono",monospace;background:transparent;color:var(--mut);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.sim button[aria-selected="true"]{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.sim .body{display:grid;grid-template-columns:1fr 1fr}
+.sim .d{padding:18px;color:var(--mut);font-size:15px}
+.sim .d b{color:var(--ink);display:block;font:700 18px "Space Grotesk";margin-bottom:6px}
+.con{background:#060C16;color:#9FE9C5;font:13px/1.7 "JetBrains Mono",monospace;padding:16px;min-height:170px;white-space:pre-wrap}
+.sim .run{margin:0 0 0 auto;background:var(--ok);color:var(--on);border-color:var(--ok);font-weight:500}
+.tl{list-style:none;margin:0;padding:0 0 0 26px;border-left:2px solid var(--line)}
+.tl>li{position:relative;padding:0 0 34px 8px}
+.tl>li::before{content:"";position:absolute;left:-34px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--acc);border:3px solid var(--bg)}
+.dt{font:500 13.5px "JetBrains Mono";color:var(--acc)}
+.tl h3{font-size:22px;margin:4px 0 2px}
+.org{color:var(--mut);margin-bottom:10px;font-weight:500}
+.tl ul{margin:0;padding-left:18px;color:var(--mut);font-size:15.5px}
+.tl ul li{margin-bottom:5px}
+.contact a.b{margin-bottom:8px}
+footer{padding:26px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:13.5px}
+@media (max-width:700px){.sim .body{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="w"><b>KB<span style="color:var(--acc)">.</span>dev</b><a href="#about">About</a><a href="#ai">AI &amp; Dynamic UI</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Hire me</a><a href="Krishna-Burra-Resume.pdf" download="Krishna-Burra-Resume.pdf">Resume</a><button class="tg" id="tg" aria-label="Switch colour theme">Theme</button></div></nav>
+<main>
+<header class="w hero">
+<div class="lbl">// hello, world</div>
+<h1>Krishna Burra</h1>
+<div class="r">Flutter Lead · Senior Flutter Developer</div>
+<p>7+ years building mobile and web apps across fintech, healthcare and enterprise. I lead Flutter teams and ship features from requirements to production, including SQ Lens, which launched in 4 countries.</p>
+<div class="btns"><a class="b p" href="#projects">View projects</a><a class="b s" href="#contact">Hire me</a><a class="b s" href="Krishna-Burra-Resume.pdf" download="Krishna-Burra-Resume.pdf">Download resume</a></div>
+<div class="stats">
+<div class="st"><strong data-n="7" data-s="+">0</strong><span>years in software</span></div>
+<div class="st"><strong data-n="5" data-s="+">0</strong><span>years in Flutter</span></div>
+<div class="st"><strong data-n="4">0</strong><span>countries, SQ Lens launch</span></div>
+<div class="st"><strong data-n="3">0</strong><span>months to build SQ Lens</span></div>
+</div>
+</header>
+
+<section id="about"><div class="w">
+<div class="lbl">// about.me</div><h2>Leading Flutter from code to release</h2>
+<p class="lead">I own critical modules, mentor developers, review code and coordinate with product, backend, QA and business teams. At SmartQ I handle Android, iOS and Web production releases myself, from build preparation to post-release support.</p>
+<div class="g">
+<div class="c"><div class="ic">TL</div><h3>Team leadership</h3><p>Assign tasks, mentor engineers, review code and clear technical blockers.</p></div>
+<div class="c"><div class="ic">RL</div><h3>Release ownership</h3><p>Demo, Pre-Prod and Prod environments, Git branching and store releases.</p></div>
+<div class="c"><div class="ic">UI</div><h3>Dynamic UI</h3><p>GenUI screens driven by API responses, plus dynamic forms and charts.</p></div>
+<div class="c"><div class="ic">OF</div><h3>Offline-first</h3><p>Reliable operation in low or no-connectivity environments.</p></div>
+</div></div></section>
+
+<section id="ai"><div class="w">
+<div class="lbl">// ai.and.dynamic.ui</div><h2>AI tools and API-driven interfaces</h2>
+<p class="lead">I use AI tooling in my daily workflow and build interfaces that adapt to server responses.</p>
+<div class="g">
+<div class="c"><h3>GenUI</h3><p>Designed and implemented dynamic, configurable screens built from API-driven responses.</p><span class="t">Flutter</span><span class="t">Dynamic UI</span></div>
+<div class="c"><h3>AI-assisted development</h3><p>Day-to-day work with Cursor and GitHub Copilot alongside Android Studio and VS Code.</p><span class="t">Cursor</span><span class="t">Copilot</span></div>
+<div class="c"><h3>Gemini API and RAG</h3><p>Hands-on with the Gemini API, with basic knowledge of Retrieval-Augmented Generation.</p><span class="t">Gemini API</span><span class="t">RAG (basic)</span></div>
+</div></div></section>
+
+<section id="skills"><div class="w">
+<div class="lbl">// tech.stack</div><h2>Technical skills</h2>
+<div class="sk">
+<div><h3>Languages</h3><span class="t">Dart</span><span class="t">Java</span></div>
+<div><h3>Flutter and mobile</h3><span class="t">Flutter iOS/Android/Web</span><span class="t">l10n</span><span class="t">Offline-first</span><span class="t">Push notifications</span><span class="t">Deep linking</span><span class="t">Dynamic forms</span><span class="t">Data visualization</span><span class="t">RBAC</span></div>
+<div><h3>Backend and cloud</h3><span class="t">REST APIs</span><span class="t">Firebase</span><span class="t">Firestore</span><span class="t">FCM</span><span class="t">GCP</span><span class="t">AWS API Gateway</span><span class="t">MySQL</span></div>
+<div><h3>Leadership</h3><span class="t">Code reviews</span><span class="t">Mentoring</span><span class="t">Agile/Scrum</span><span class="t">Requirements analysis</span><span class="t">Release strategy</span></div>
+<div><h3>Release and tools</h3><span class="t">Play Store</span><span class="t">App Store</span><span class="t">Web deploy</span><span class="t">Android Studio</span><span class="t">VS Code</span><span class="t">GitHub</span><span class="t">Bitbucket</span></div>
+</div></div></section>
+
+<section id="projects"><div class="w">
+<div class="lbl">// projects.build</div><h2>Featured projects</h2>
+<article class="c feat">
+<div class="top"><h3>SQ Lens</h3><span class="badge">Live in 4 countries</span></div>
+<p>A cross-platform compliance, hygiene and kitchen-safety app for SmartQ. Built from scratch in 3 months, and it won the Emerging Leader Award at the quarterly townhall.</p>
+<ul class="f"><li>GenUI: screens built from API responses</li><li>Multi-level Check Approval Flow per checklist</li><li>Profile, business-layer and site-level access</li><li>Business Layers: global Client and Sector entities</li><li>Push notifications and deep linking</li><li>Interactive charts and dynamic forms</li><li>Localization across countries</li><li>Offline support for low connectivity</li></ul>
+<span class="t">Flutter</span><span class="t">Dart</span><span class="t">REST APIs</span><span class="t">Firebase</span><span class="t">iOS · Android · Web</span>
+<div class="sim" role="group" aria-label="Interactive feature simulator">
+<div class="bar" role="tablist"><button role="tab" aria-selected="true" data-k="a">Approval flow</button><button role="tab" aria-selected="false" data-k="g">GenUI</button><button role="tab" aria-selected="false" data-k="o">Offline</button><button class="run" id="run">Run</button></div>
+<div class="body"><div class="d" id="desc"></div><div class="con" id="con" aria-live="polite">// Illustrative simulation. Press Run.</div></div>
+</div></article>
+<div class="g" style="margin-top:16px">
+<article class="c"><h3>Muthoot Ready Money</h3><p>Personal loan app with PAN and Aadhaar verification, plus an SME business loan form.</p><span class="t">Flutter</span><span class="t">Fintech</span></article>
+<article class="c"><h3>Ready Money Web</h3><p>Call-centre panel for lead assignment, admin views, report downloads and document handling.</p><span class="t">Flutter Web</span></article>
+<article class="c"><h3>Muthoot Smart Bank</h3><p>Internal branch app with customer verification checks through API integrations.</p><span class="t">Flutter</span><span class="t">REST APIs</span></article>
+<article class="c"><h3>Aadhyayna</h3><p>Employee training platform with API-driven, day-wise modules.</p><span class="t">Flutter</span></article>
+<article class="c"><h3>Fetosense</h3><p>Runs NST/CTG tests on pregnant mothers with portable devices, stores results in Firebase and generates clinical reports.</p><span class="t">Flutter</span><span class="t">Firebase</span></article>
+<article class="c"><h3>Mother’s App</h3><p>Mothers self-test a baby’s heart rate with a connected CTG device and play back recordings.</p><span class="t">Flutter</span></article>
+<article class="c"><h3>Anandimaa</h3><p>Tracks maternal health and a baby’s first 1,000 days for ASHA workers and NGOs.</p><span class="t">Android</span><span class="t">Java</span></article>
+</div></div></section>
+
+<section id="experience"><div class="w">
+<div class="lbl">// experience.log</div><h2>Professional experience</h2>
+<ol class="tl">
+<li><div class="dt">Dec 2024 – Present</div><h3>Senior Software Engineer-I</h3><div class="org">SmartQ (Bottle-Lab Technologies) · Bangalore</div><ul><li>Lead Flutter development across mobile and web, and own technical direction and delivery.</li><li>Mentor the frontend team through task assignment, code reviews and unblocking.</li><li>Built SQ Lens and GenUI, a configurable multi-level approval flow, and role-based access across the app and admin portal.</li><li>Independently run Android, iOS and Web releases and support production issues.</li></ul></li>
+<li><div class="dt">Jul 2022 – Dec 2024</div><h3>Flutter Developer</h3><div class="org">Muthoot Group (Emsyne Technologies &amp; Muthoot Finance) · Bangalore</div><ul><li>Owned requirements, development, UAT and releases for customer and internal Flutter apps.</li><li>Integrated Firebase and MySQL and handled deployments and post-release fixes.</li></ul></li>
+<li><div class="dt">Aug 2021 – Jun 2022</div><h3>Flutter Developer</h3><div class="org">CareMother · Mumbai</div><ul><li>Built Flutter and native Android health apps on Firebase Firestore, with unit testing and production releases.</li></ul></li>
+<li><div class="dt">Apr 2019 – Feb 2021</div><h3>Application Developer</h3><div class="org">IBM India · Bangalore &amp; Kolkata</div><ul><li>Supported the Nestlé account, resolving production incidents with cross-functional teams.</li></ul></li>
+</ol>
+<div class="g" style="margin-top:10px">
+<div class="c"><h3>Emerging Leader Award</h3><p>SmartQ townhall, 2025, for delivering SQ Lens.</p></div>
+<div class="c"><h3>Smart India Hackathon</h3><p>Ministry of Rural Development project, selected for the Grand Finale.</p></div>
+<div class="c"><h3>Education</h3><p>B.E. Computer Science, Lakshmi Narain College of Technology, Indore, 2014–2018.</p></div>
+</div></div></section>
+
+<section id="contact" class="contact"><div class="w">
+<div class="lbl">// contact.me</div><h2>Let’s work together</h2>
+<p class="lead">Looking for a Flutter lead who ships to production and mentors a team? I’m based in Bangalore and speak English and Hindi.</p>
+<div class="btns"><a class="b p" href="mailto:kburra739@gmail.com">kburra739@gmail.com</a><a class="b s" href="tel:+917987476368">+91 79874 76368</a><a class="b s" href="Krishna-Burra-Resume.pdf" download="Krishna-Burra-Resume.pdf">Download resume</a></div>
+</div></section>
+</main>
+<footer><div class="w">Krishna Burra © 2026 · Bangalore, India</div></footer>
+<script>
+(function(){
+var F={
+a:{t:'Configurable approval flow',d:'Admins and super users define approval hierarchies per checklist.',l:['> checklist.submit("Kitchen safety")','> level 1: Supervisor ... approved','> level 2: Manager ... approved','> status: APPROVED']},
+g:{t:'GenUI rendering',d:'The API response decides which widgets the screen builds.',l:['> GET /screen/daily-check','< {"type":"form","fields":3}','> render DynamicForm(3 fields)','> screen ready']},
+o:{t:'Offline-first check',d:'Checks keep working with no connection and sync later.',l:['> network: offline','> save check to local store','> network: online','> sync 1 pending check ... done']}};
+var cur='a',desc=document.getElementById('desc'),con=document.getElementById('con'),tm=[];
+function show(k){cur=k;tm.forEach(clearTimeout);tm=[];desc.innerHTML='<b>'+F[k].t+'</b>'+F[k].d;con.textContent='// Illustrative simulation. Press Run.';
+ document.querySelectorAll('.sim [data-k]').forEach(function(b){b.setAttribute('aria-selected',b.dataset.k===k)})}
+document.querySelectorAll('.sim [data-k]').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.k)})});
+document.getElementById('run').addEventListener('click',function(){tm.forEach(clearTimeout);con.textContent='';
+ F[cur].l.forEach(function(s,i){tm.push(setTimeout(function(){con.textContent+=(i?'\n':'')+s},i*450))})});
+show('a');
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.querySelectorAll('[data-n]').forEach(function(e){var n=+e.dataset.n,s=e.dataset.s||'';
+ if(rm){e.textContent=n+s;return}var i=0;var t=setInterval(function(){i++;e.textContent=i+(i===n?s:'');if(i>=n)clearInterval(t)},120)});
+var r=document.documentElement;
+document.getElementById('tg').addEventListener('click',function(){
+ var d=r.dataset.theme?r.dataset.theme==='dark':!matchMedia('(prefers-color-scheme:light)').matches;
+ r.dataset.theme=d?'light':'dark'});
+})();
+</script>
+</body>
+</html>
